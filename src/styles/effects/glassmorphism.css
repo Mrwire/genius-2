@@ -1,0 +1,16 @@
+/* Glassmorphism Effects */
+.glass-bg {
+  @apply bg-white/5 backdrop-blur-md;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  @apply glass-bg rounded-xl;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-button {
+  @apply glass-bg rounded-lg px-6 py-3
+         hover:bg-white/10
+         transition-all duration-300;
+}

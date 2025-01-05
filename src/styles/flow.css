@@ -1,0 +1,27 @@
+@layer utilities {
+  .flow-arrow {
+    transform-origin: var(--arrow-start-x) var(--arrow-start-y);
+  }
+
+  @keyframes arrowPulse {
+    0%, 100% {
+      opacity: 0.5;
+      transform: translate(-50%, 0) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, 0) scale(1.1);
+    }
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      opacity: 0.2;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      opacity: 0.4;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+  }
+}

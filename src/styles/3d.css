@@ -1,0 +1,39 @@
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .front-face { transform: translateZ(4rem); }
+  .back-face { transform: translateZ(-4rem) rotateY(180deg); }
+  .right-face { transform: translateX(4rem) rotateY(90deg); }
+  .left-face { transform: translateX(-4rem) rotateY(-90deg); }
+  .top-face { transform: translateY(-4rem) rotateX(90deg); }
+  .bottom-face { transform: translateY(4rem) rotateX(-90deg); }
+
+  .rotate-3d {
+    animation: rotate3d 20s linear infinite;
+  }
+
+  @keyframes rotate3d {
+    from {
+      transform: rotateX(0) rotateY(0);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+
+  .float-3d {
+    animation: float3d 6s ease-in-out infinite;
+  }
+
+  @keyframes float3d {
+    0%, 100% {
+      transform: translateY(0) rotateX(10deg) rotateY(10deg);
+    }
+    50% {
+      transform: translateY(-20px) rotateX(-10deg) rotateY(-10deg);
+    }
+  }
+}

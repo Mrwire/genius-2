@@ -1,0 +1,28 @@
+@layer components {
+  .hero-section {
+    @apply relative min-h-[130vh] w-full bg-[#191C1F] overflow-hidden flex items-center;
+  }
+
+  .hero-background {
+    @apply absolute inset-0 z-10;
+  }
+
+  .hero-background::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-[#191C1F]/90 to-[#191C1F]/70 z-20;
+  }
+
+  .hero-grid {
+    @apply absolute inset-0 z-20 opacity-0;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  @screen 2xl {
+    .hero-grid {
+      background-size: 80px 80px;
+    }
+  }
+}

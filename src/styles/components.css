@@ -1,0 +1,48 @@
+/* Glassmorphic Cards */
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  @apply bg-white/10;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Futuristic Buttons */
+.btn-future {
+  @apply relative overflow-hidden px-8 py-3 rounded-lg;
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  transition: all 0.3s ease;
+}
+
+.btn-future::before {
+  content: '';
+  @apply absolute inset-0 opacity-0;
+  background: linear-gradient(
+    45deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  transition: opacity 0.3s ease;
+}
+
+.btn-future:hover::before {
+  @apply opacity-100;
+}
+
+/* Grid Background */
+.cyber-grid {
+  @apply absolute inset-0 pointer-events-none;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(circle at center, black, transparent);
+}

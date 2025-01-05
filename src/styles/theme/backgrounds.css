@@ -1,0 +1,80 @@
+/* Base Background Gradients */
+.bg-futuristic {
+  @apply relative bg-gradient-to-b from-[#0A0A0A] to-[#1A1A1A];
+}
+
+.bg-futuristic::before {
+  content: '';
+  @apply absolute inset-0 opacity-10;
+  background: radial-gradient(circle at center, #FFFFFF 0%, transparent 70%);
+}
+
+/* Geometric Patterns */
+.geometric-grid {
+  @apply absolute inset-0 pointer-events-none opacity-[0.03];
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+}
+
+.geometric-lines {
+  @apply absolute inset-0 pointer-events-none opacity-[0.05];
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.03) 10px,
+    rgba(255,255,255,0.03) 11px
+  );
+}
+
+/* Glow Effects */
+.glow-overlay {
+  @apply absolute inset-0 pointer-events-none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255,255,255,0.1) 0%,
+    transparent 60%
+  );
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Depth Layers */
+.depth-layer {
+  @apply absolute inset-0 pointer-events-none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0,0,0,0.3) 100%
+  );
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Section-specific modifiers */
+.section-hero {
+  @apply bg-futuristic overflow-hidden;
+}
+
+.section-services {
+  @apply bg-futuristic relative;
+}
+
+.section-values {
+  @apply bg-futuristic relative;
+}
+
+.section-contact {
+  @apply bg-futuristic relative;
+}

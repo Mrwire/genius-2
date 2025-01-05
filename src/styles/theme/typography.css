@@ -1,0 +1,16 @@
+/* Typography */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.heading-1 {
+  @apply text-[clamp(2.5rem,8vw,5rem)] font-extrabold leading-tight;
+}
+
+.heading-2 {
+  @apply text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight;
+}
+
+.body-text {
+  @apply text-[clamp(1rem,1.5vw,1.2rem)] text-white/80;
+}

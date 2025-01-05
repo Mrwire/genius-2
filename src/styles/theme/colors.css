@@ -1,0 +1,12 @@
+/* Monochrome Theme Colors */
+:root {
+  --color-primary: #FFFFFF;
+  --color-secondary: #CCCCCC;
+  --color-background: #0A0A0A;
+  --color-background-dark: #000000;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-text: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.15);
+}

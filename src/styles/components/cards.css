@@ -1,0 +1,12 @@
+/* Card Components */
+.glass-card {
+  @apply bg-white/5 backdrop-blur-md
+         border border-white/10 rounded-xl
+         transition-all duration-300;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card:hover {
+  @apply bg-white/10 transform -translate-y-1;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}

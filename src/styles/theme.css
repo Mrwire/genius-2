@@ -1,0 +1,23 @@
+@layer base {
+  :root {
+    --color-background: #000000;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
+    --color-accent-primary: rgb(59 130 246);
+    --color-accent-secondary: rgb(168 85 247);
+  }
+}
+
+@layer utilities {
+  .bg-theme {
+    background-color: var(--color-background);
+  }
+  
+  .text-theme-primary {
+    color: var(--color-text-primary);
+  }
+  
+  .text-theme-secondary {
+    color: var(--color-text-secondary);
+  }
+}

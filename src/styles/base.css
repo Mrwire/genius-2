@@ -1,0 +1,20 @@
+/* Base styles */
+:root {
+  --color-primary: #00D4FF;
+  --color-secondary: #FF3366;
+  --color-background: #191C1F;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-text: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --border-glow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+body {
+  @apply bg-[#191C1F] text-white font-montserrat antialiased;
+  background: linear-gradient(135deg, #191C1F 0%, #1A1E21 100%);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
