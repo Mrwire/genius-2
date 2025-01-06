@@ -1,29 +1,12 @@
-import { motion } from 'framer-motion';
-
 export default function ScrollIndicator() {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.5, duration: 1 }}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-    >
-      <div className="flex flex-col items-center text-white/60">
-        <span className="text-sm mb-2">Scroll</span>
-        <div className="w-[2px] h-8 bg-white/20">
-          <motion.div
-            className="w-full h-1/3 bg-white"
-            animate={{
-              y: [0, 24, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
+    <div className="absolute bottom-8 md:bottom-10 left-6 md:left-[5vw] z-30 flex flex-col items-start gap-2">
+      <span className="font-montserrat text-sm uppercase tracking-[2px] text-white">
+        Scroll
+      </span>
+      <div className="relative w-px h-[50px] bg-white/30 overflow-hidden">
+        <div className="absolute inset-0 bg-white animate-scrollDown" />
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -1,46 +1,42 @@
-import { useEffect, useState } from 'react';
-import Lottie from 'lottie-react';
+import { useEffect, useRef, useState } from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 interface LottieAnimationProps {
-  url: string;
+  src: string;
   className?: string;
+  autoplay?: boolean;
+  loop?: boolean;
+  onLoad?: () => void;
 }
 
-export default function LottieAnimation({ url, className = '' }: LottieAnimationProps) {
-  const [animationData, setAnimationData] = useState(null);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => setAnimationData(data))
-      .catch(err => {
-        console.error('Error loading Lottie animation:', err);
-        setError(true);
-      });
-  }, [url]);
-
-  if (error) {
-    return (
-      <div className={`flex items-center justify-center ${className}`}>
-        <div className="text-gray-400">Animation non disponible</div>
-      </div>
-    );
-  }
-
-  if (!animationData) {
-    return (
-      <div className={`flex items-center justify-center ${className}`}>
-        <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
-      </div>
-    );
-  }
+export default function LottieAnimation({
+  src,
+  className = '',
+  autoplay = false,
+  loop = true,
+  onLoad
+}: LottieAnimationProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <Lottie
-      animationData={animationData}
-      loop={true}
-      className={className}
-    />
+    <div className={`w-full h-full ${className}`}>
+      {!isLoaded && (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+      <Player
+        src={src}
+        className={`w-full h-full ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        autoplay={autoplay}
+        loop={loop}
+        onEvent={event => {
+          if (event === 'load') {
+            setIsLoaded(true);
+            onLoad?.();
+          }
+        }}
+      />
+    </div>
   );
 } 

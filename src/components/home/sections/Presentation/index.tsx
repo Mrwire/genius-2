@@ -1,9 +1,5 @@
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '../../../../hooks/useIntersectionObserver';
-import LottieAnimation from '../../../common/LottieAnimation';
-
-// Import des animations Lottie
-import { LOTTIE_ANIMATIONS } from './animations';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -11,88 +7,6 @@ const fadeIn = {
 };
 
 const VALUES = ['SAVOIR-FAIRE', 'TECHNOLOGIE', 'INNOVATION', 'CRÉATIVITÉ', 'PASSION'];
-
-const SERVICES = [
-  {
-    title: 'BRANDING',
-    animationUrl: 'https://lottie.host/d12f0546-609f-437f-968f-8803ec4ef481/B8yjHJdjgA.json',
-    items: [
-      'Identité visuelle et graphique',
-      'Logotype & Charte Graphique',
-      'Naming & recherche de nom',
-      'Personal branding'
-    ]
-  },
-  {
-    title: 'PRINT',
-    animation: LOTTIE_ANIMATIONS.print,
-    items: [
-      'Edition / Graphisme / Publicité',
-      'Supports imprimés',
-      'Plaquette commerciale',
-      'Papeterie marketing'
-    ]
-  },
-  {
-    title: 'MÉDIA',
-    animation: LOTTIE_ANIMATIONS.media,
-    items: [
-      'Vidéo / Reportage / Photo',
-      'Portrait corporate',
-      'Motion Design',
-      'Photo publicitaire'
-    ]
-  },
-  {
-    title: 'MARKETING',
-    animation: LOTTIE_ANIMATIONS.marketing,
-    items: [
-      'Digital Marketing',
-      'Stratégie Communication',
-      'Social Media Strategy'
-    ]
-  },
-  {
-    title: 'DIGITAL & WEB',
-    animation: LOTTIE_ANIMATIONS.digital,
-    items: [
-      'Application & Mini jeu',
-      'Site Vitrine / E-commerce',
-      'Newsletter Mailing',
-      'Social Media'
-    ]
-  },
-  {
-    title: 'IMPRESSION',
-    animation: LOTTIE_ANIMATIONS.impression,
-    items: [
-      'Numérique',
-      'Technique de Fabrication',
-      'Personnalisation',
-      'Objets publicitaires'
-    ]
-  },
-  {
-    title: 'DESIGN D\'ESPACE',
-    animation: LOTTIE_ANIMATIONS.design,
-    items: [
-      'Simulation 2D - 3D',
-      'Stand / Shops et divers',
-      'Aménagement Intérieur',
-      'Merchandising & PLV'
-    ]
-  },
-  {
-    title: 'GAMING & EVENT',
-    animation: LOTTIE_ANIMATIONS.gaming,
-    items: [
-      'Studio de streaming',
-      'Élaboration de concept',
-      'Tournois en ligne',
-      'Organisation Event'
-    ]
-  }
-];
 
 export default function Presentation() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
@@ -200,55 +114,6 @@ export default function Presentation() {
               <span className="text-white font-semibold">{value}</span>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Nos Métiers */}
-        <motion.div
-          initial="hidden"
-          animate={isIntersecting ? "visible" : "hidden"}
-          variants={fadeIn}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-32"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-            AGENCE MULTIDISCIPLINAIRE
-          </h2>
-          <p className="text-lg text-gray-600 text-center mb-16">
-            Découvrez notre expertise dans différents domaines
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {SERVICES.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial="hidden"
-                animate={isIntersecting ? "visible" : "hidden"}
-                variants={fadeIn}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="h-48 w-full bg-gray-50 flex items-center justify-center p-4">
-                  <LottieAnimation
-                    url={service.animationUrl}
-                    className="w-32 h-32"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    {service.title}
-                  </h3>
-                  <ul className="space-y-2">
-                    {service.items.map((item, i) => (
-                      <li key={i} className="text-gray-600 flex items-center">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
