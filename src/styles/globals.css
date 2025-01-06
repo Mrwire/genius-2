@@ -13,4 +13,14 @@
 .animate-gradient-x {
   animation: gradient-x 3s ease infinite;
   background-size: 200% 200%;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 20;
+  }
+}
+
+.animate-dash {
+  animation: dash 20s linear infinite;
 } 

@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
   {
     id: 'design',
     title: 'DESIGN D\'ESPACE',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_hHJqSJCTAp.json',
+    animation: '/animations/space-design.json',
     services: [
       'Simulation 2D - 3D',
       'Stand / Shops et divers',
@@ -82,7 +82,7 @@ export const SERVICES: Service[] = [
   {
     id: 'gaming',
     title: 'GAMING & EVENT',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_bIrDfOUWWt.json',
+    animation: '/animations/gaming.json',
     services: [
       'Studio de streaming',
       'Élaboration de concept',

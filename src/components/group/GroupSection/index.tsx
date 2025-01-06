@@ -16,11 +16,26 @@ export default function GroupSection() {
       {/* Luxury Gradient Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#191C1F] via-[#1a1d20] to-black" />
       
-      {/* Noise Texture */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
+      {/* Noise Texture - Utilisez une URL externe fiable */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAOh...")`,
+          backgroundRepeat: 'repeat'
+        }}
+      />
       
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
+      {/* Grid Pattern - Utilisez un motif CSS au lieu d'une image */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '20px 20px'
+        }}
+      />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0">
