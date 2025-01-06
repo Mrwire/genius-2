@@ -9,7 +9,16 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          'animations': ['@lottiefiles/react-lottie-player'],
+          'ui': ['@headlessui/react', 'framer-motion']
+        }
+      }
+    }
   },
   optimizeDeps: {
     exclude: ['@splinetool/runtime']

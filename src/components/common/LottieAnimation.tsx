@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 interface LottieAnimationProps {
   src: string;
@@ -15,49 +16,27 @@ export default function LottieAnimation({
   loop = true,
   onLoad
 }: LottieAnimationProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [DotLottie, setDotLottie] = useState<any>(null);
-
-  useEffect(() => {
-    // Chargement dynamique de la bibliothèque
-    import('@lottiefiles/dotlottie-web')
-      .then((module) => {
-        setDotLottie(module.DotLottie);
-      })
-      .catch((error) => {
-        console.error('Failed to load DotLottie:', error);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (!canvasRef.current || !DotLottie) return;
-
-    const initLottie = async () => {
-      const animation = new DotLottie({
-        autoplay,
-        loop,
-        canvas: canvasRef.current,
-        src,
-      });
-
-      animation.addEventListener('ready', () => {
-        onLoad?.();
-      });
-
-      return animation;
-    };
-
-    const animationPromise = initLottie();
-
-    return () => {
-      animationPromise.then(animation => animation?.destroy());
-    };
-  }, [src, autoplay, loop, DotLottie]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <canvas 
-      ref={canvasRef}
-      className={`w-full h-full ${className}`}
-    />
+    <div className={`w-full h-full ${className}`}>
+      {!isLoaded && (
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+      <Player
+        src={src}
+        className={`w-full h-full ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        autoplay={autoplay}
+        loop={loop}
+        onEvent={event => {
+          if (event === 'load') {
+            setIsLoaded(true);
+            onLoad?.();
+          }
+        }}
+      />
+    </div>
   );
 } 
