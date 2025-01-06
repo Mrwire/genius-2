@@ -3,14 +3,7 @@ import { useIntersectionObserver } from '../../../../hooks/useIntersectionObserv
 import Lottie from 'lottie-react';
 
 // Import des animations Lottie
-import brandingAnimation from './animations/branding.json';
-import printAnimation from './animations/print.json';
-import mediaAnimation from './animations/media.json';
-import marketingAnimation from './animations/marketing.json';
-import digitalAnimation from './animations/digital.json';
-import impressionAnimation from './animations/impression.json';
-import designAnimation from './animations/design.json';
-import gamingAnimation from './animations/gaming.json';
+import { LOTTIE_ANIMATIONS } from './animations';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -22,7 +15,7 @@ const VALUES = ['SAVOIR-FAIRE', 'TECHNOLOGIE', 'INNOVATION', 'CRÉATIVITÉ', 'PA
 const SERVICES = [
   {
     title: 'BRANDING',
-    animation: brandingAnimation,
+    animation: LOTTIE_ANIMATIONS.branding,
     items: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -32,7 +25,7 @@ const SERVICES = [
   },
   {
     title: 'PRINT',
-    animation: printAnimation,
+    animation: LOTTIE_ANIMATIONS.print,
     items: [
       'Edition / Graphisme / Publicité',
       'Supports imprimés',
@@ -42,7 +35,7 @@ const SERVICES = [
   },
   {
     title: 'MÉDIA',
-    animation: mediaAnimation,
+    animation: LOTTIE_ANIMATIONS.media,
     items: [
       'Vidéo / Reportage / Photo',
       'Portrait corporate',
@@ -52,7 +45,7 @@ const SERVICES = [
   },
   {
     title: 'MARKETING',
-    animation: marketingAnimation,
+    animation: LOTTIE_ANIMATIONS.marketing,
     items: [
       'Digital Marketing',
       'Stratégie Communication',
@@ -61,7 +54,7 @@ const SERVICES = [
   },
   {
     title: 'DIGITAL & WEB',
-    animation: digitalAnimation,
+    animation: LOTTIE_ANIMATIONS.digital,
     items: [
       'Application & Mini jeu',
       'Site Vitrine / E-commerce',
@@ -71,7 +64,7 @@ const SERVICES = [
   },
   {
     title: 'IMPRESSION',
-    animation: impressionAnimation,
+    animation: LOTTIE_ANIMATIONS.impression,
     items: [
       'Numérique',
       'Technique de Fabrication',
@@ -81,7 +74,7 @@ const SERVICES = [
   },
   {
     title: 'DESIGN D\'ESPACE',
-    animation: designAnimation,
+    animation: LOTTIE_ANIMATIONS.design,
     items: [
       'Simulation 2D - 3D',
       'Stand / Shops et divers',
@@ -91,7 +84,7 @@ const SERVICES = [
   },
   {
     title: 'GAMING & EVENT',
-    animation: gamingAnimation,
+    animation: LOTTIE_ANIMATIONS.gaming,
     items: [
       'Studio de streaming',
       'Élaboration de concept',
