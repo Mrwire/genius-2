@@ -5,7 +5,7 @@ export const SERVICES: Service[] = [
   {
     id: 'branding',
     title: 'BRANDING',
-    animation: "https://lottie.host/e57b7d1e-3932-4bde-8516-afc279fd2ded/UtDN5QiMsF.lottie",
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_xyadoh9h.json',
     services: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
   {
     id: 'print',
     title: 'PRINT',
-    animation: "https://lottie.host/2a32e8ed-907d-4c4b-9101-ce76c5cf789c/xr4rrLvxGi.lottie",
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_ydo1amjm.json',
     services: [
       'Edition / Graphisme / Publicité',
       'Supports imprimés',
@@ -27,7 +27,7 @@ export const SERVICES: Service[] = [
   {
     id: 'media',
     title: 'MÉDIA',
-    animation: "https://lottie.host/0934e41e-7f14-4469-8e1c-51e5834dff47/dXpqRKBTTM.lottie",
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_dXpqRKBTTM.json',
     services: [
       'Vidéo / Reportage / Photo',
       'Portrait corporate',
@@ -38,7 +38,7 @@ export const SERVICES: Service[] = [
   {
     id: 'marketing',
     title: 'MARKETING',
-    animation: 'https://lottie.host/4e997e95-8d3f-4b5e-8dd8-f3c6392beb36/UeUwVwJGrd.json',
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_UeUwVwJGrd.json',
     services: [
       'Digital Marketing',
       'Stratégie Communication',
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
   {
     id: 'digital',
     title: 'DIGITAL & WEB',
-    animation: 'https://lottie.host/cb6b907e-5276-4185-813c-6c6cb22ac58d/dGfPYmGGtc.json',
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_dGfPYmGGtc.json',
     services: [
       'Application & Mini jeu',
       'Site Vitrine / E-commerce',
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
   {
     id: 'impression',
     title: 'IMPRESSION',
-    animation: 'https://lottie.host/3d0d4d6c-4b12-4586-9c7b-c0f8914cd36d/kZqQxYSWbq.json',
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_kZqQxYSWbq.json',
     services: [
       'Numérique',
       'Technique de Fabrication',
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
   {
     id: 'design',
     title: 'DESIGN D\'ESPACE',
-    animation: 'https://lottie.host/c1c1f726-7e5f-45cd-9b0c-d7cce0d1a8c3/hHJqSJCTAp.json',
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_hHJqSJCTAp.json',
     services: [
       'Simulation 2D - 3D',
       'Stand / Shops et divers',
@@ -82,7 +82,7 @@ export const SERVICES: Service[] = [
   {
     id: 'gaming',
     title: 'GAMING & EVENT',
-    animation: 'https://lottie.host/e8c7d5c9-0d4b-4c46-8612-f067e8e7c6a4/bIrDfOUWWt.json',
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_bIrDfOUWWt.json',
     services: [
       'Studio de streaming',
       'Élaboration de concept',

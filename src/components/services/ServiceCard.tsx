@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Player } from '@lottiefiles/react-lottie-player';
 import type { ServiceCardProps } from './types';
 
 export default function ServiceCard({ service, isInView, delay = 0 }: ServiceCardProps) {
@@ -36,11 +36,15 @@ export default function ServiceCard({ service, isInView, delay = 0 }: ServiceCar
           ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
           ${isHovered ? 'scale-110' : 'scale-100'}
         `}>
-          <DotLottieReact
+          <Player
             src={service.animation}
+            className="w-full h-full"
             autoplay={isHovered}
-            loop
-            onLoad={() => setIsLoaded(true)}
+            loop={true}
+            keepLastFrame={true}
+            onEvent={event => {
+              if (event === 'load') setIsLoaded(true);
+            }}
           />
         </div>
       </div>
