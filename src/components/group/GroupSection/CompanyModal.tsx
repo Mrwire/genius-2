@@ -90,25 +90,24 @@ export default function CompanyModal({ company, onClose }: CompanyModalProps) {
                   </div>
 
                   {/* Services */}
-                  <div className="mt-8">
-                    <h4 className="text-lg font-semibold text-white mb-4">
-                      Nos services
-                    </h4>
-                    <ul className="grid grid-cols-2 gap-4">
-                      {company.services.map((service, index) => (
-                        <li
-                          key={index}
-                          className="
-                            flex items-center text-gray-300
-                            hover:text-white transition-colors
-                          "
-                        >
-                          <ArrowRight className="w-4 h-4 mr-2 text-blue-400" />
-                          {service}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {company.services && company.services.length > 0 && (
+                    <div className="mt-8">
+                      <h4 className="text-lg font-semibold text-white mb-4">
+                        Nos services
+                      </h4>
+                      <ul className="grid grid-cols-2 gap-4">
+                        {company.services.map((service, index) => (
+                          <li
+                            key={index}
+                            className="flex items-center text-gray-300 hover:text-white transition-colors"
+                          >
+                            <ArrowRight className="w-4 h-4 mr-2 text-blue-400" />
+                            {service}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {/* Actions */}
                   <div className="mt-8 flex justify-end gap-4">

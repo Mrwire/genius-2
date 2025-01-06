@@ -6,7 +6,7 @@ import CompanyModal from './CompanyModal';
 import GroupHeader from './GroupHeader';
 import GroupTagline from './GroupTagline';
 import { ArrowRight } from 'lucide-react';
-import WhatsApp from 'lucide-react/dist/esm/icons/whatsapp';
+import { WhatsApp as WhatsAppIcon } from 'lucide-react';
 
 export default function GroupSection() {
   const [selectedCompany, setSelectedCompany] = useState<typeof COMPANIES[number] | null>(null);
@@ -120,7 +120,7 @@ export default function GroupSection() {
               flex items-center
             "
           >
-            <WhatsApp className="
+            <WhatsAppIcon className="
               mr-2 w-5 h-5
               transform group-hover:rotate-12
               transition-transform duration-300

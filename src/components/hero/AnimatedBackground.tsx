@@ -12,9 +12,14 @@ export default function AnimatedBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
-    canvas.width = width;
-    canvas.height = height;
+    const setSize = () => {
+      if (!canvas) return;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    setSize();
+    window.addEventListener('resize', setSize);
 
     // Particle system
     const particles: Particle[] = [];
@@ -97,8 +102,11 @@ export default function AnimatedBackground() {
     animate();
 
     // Cleanup
-    return () => cancelAnimationFrame(animationFrame);
-  }, [width, height]);
+    return () => {
+      window.removeEventListener('resize', setSize);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
 
   return (
     <canvas 
