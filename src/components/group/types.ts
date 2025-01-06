@@ -3,14 +3,17 @@ export interface Company {
   name: string;
   description: string;
   logo: string;
+  shortDescription?: string;
+  services?: string[];
+  website?: string;
   isMain?: boolean;
 }
 
 export interface CompanyCardProps {
   company: Company;
+  isInView: boolean;
   onClick: () => void;
   index: number;
-  isInView: boolean;
 }
 
 export interface ArrowProps {

@@ -14,10 +14,9 @@ export default function AnimatedParticles() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const ctx = canvas?.getContext('2d');
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!canvas || !ctx) return;
 
     // Set canvas size
     const setSize = () => {
@@ -70,11 +69,5 @@ export default function AnimatedParticles() {
     };
   }, []);
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ opacity: 0.3 }}
-    />
-  );
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />;
 }

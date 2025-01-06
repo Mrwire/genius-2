@@ -5,6 +5,9 @@ export interface Service {
   title: string;
   animation: string;
   services: string[];
+  description?: string;
+  features?: string[];
+  icon?: React.ComponentType<{ className?: string }>;
 }
 
 export interface ServiceCardProps {
