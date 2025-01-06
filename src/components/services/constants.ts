@@ -5,7 +5,7 @@ export const SERVICES: Service[] = [
   {
     id: 'branding',
     title: 'BRANDING',
-    animation: 'https://lottie.host/2a32e8ed-907d-4c4b-9101-ce76c5cf789c/xr4rrLvxGi.json',
+    animation: "https://lottie.host/e57b7d1e-3932-4bde-8516-afc279fd2ded/UtDN5QiMsF.lottie",
     services: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
   {
     id: 'print',
     title: 'PRINT',
-    animation: 'https://lottie.host/ad7fd0d7-751d-4a25-b847-4e3a2d60acb6/aPWyXrBTZl.json',
+    animation: "https://lottie.host/2a32e8ed-907d-4c4b-9101-ce76c5cf789c/xr4rrLvxGi.lottie",
     services: [
       'Edition / Graphisme / Publicité',
       'Supports imprimés',
@@ -27,7 +27,7 @@ export const SERVICES: Service[] = [
   {
     id: 'media',
     title: 'MÉDIA',
-    animation: 'https://lottie.host/0934e41e-7f14-4469-8e1c-51e5834dff47/dXpqRKBTTM.json',
+    animation: "https://lottie.host/0934e41e-7f14-4469-8e1c-51e5834dff47/dXpqRKBTTM.lottie",
     services: [
       'Vidéo / Reportage / Photo',
       'Portrait corporate',
