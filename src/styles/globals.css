@@ -18,13 +18,17 @@
 /* Glitch effect */
 .glitch-text {
   position: relative;
-  animation: glitch 1s linear infinite;
+  animation: glitch 500ms infinite;
+  animation-timing-function: steps(2, end);
 }
 
 @keyframes glitch {
-  2%, 64% { transform: translate(2px,0) skew(0deg); }
-  4%, 60% { transform: translate(-2px,0) skew(0deg); }
-  62% { transform: translate(0,0) skew(5deg); }
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
 
 /* Gradient animation */
@@ -68,4 +72,19 @@
   .bg-gradient-radial {
     background-image: radial-gradient(var(--tw-gradient-stops));
   }
+}
+
+/* Gold color variable */
+:root {
+  --color-gold: #FFD700;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse {
+  animation: pulse 1s ease-in-out infinite;
 } 
