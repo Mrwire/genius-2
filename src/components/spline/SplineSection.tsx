@@ -1,6 +1,8 @@
-import Spline from '@splinetool/react-spline';
+import { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
+
+const Spline = lazy(() => import('@splinetool/react-spline'));
 
 export default function SplineSection() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
@@ -12,10 +14,16 @@ export default function SplineSection() {
 
       {/* Container Spline */}
       <div className="absolute inset-0">
-        <Spline 
-          scene="https://prod.spline.design/YBtYg98mN1qrOQDW/scene.splinecode"
-          className="w-full h-full"
-        />
+        <Suspense fallback={
+          <div className="w-full h-full flex items-center justify-center bg-black">
+            <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        }>
+          <Spline 
+            scene="https://prod.spline.design/YBtYg98mN1qrOQDW/scene.splinecode"
+            className="w-full h-full"
+          />
+        </Suspense>
       </div>
 
       {/* Contenu superposé */}

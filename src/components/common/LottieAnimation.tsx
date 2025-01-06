@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import { DotLottie } from '@lottiefiles/dotlottie-web';
+import { useEffect, useRef, useState } from 'react';
 
 interface LottieAnimationProps {
   src: string;
@@ -17,30 +16,43 @@ export default function LottieAnimation({
   onLoad
 }: LottieAnimationProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const lottieRef = useRef<DotLottie | null>(null);
+  const [DotLottie, setDotLottie] = useState<any>(null);
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    // Chargement dynamique de la bibliothèque
+    import('@lottiefiles/dotlottie-web')
+      .then((module) => {
+        setDotLottie(module.DotLottie);
+      })
+      .catch((error) => {
+        console.error('Failed to load DotLottie:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!canvasRef.current || !DotLottie) return;
 
     const initLottie = async () => {
-      lottieRef.current = new DotLottie({
+      const animation = new DotLottie({
         autoplay,
         loop,
         canvas: canvasRef.current,
         src,
       });
 
-      lottieRef.current.addEventListener('ready', () => {
+      animation.addEventListener('ready', () => {
         onLoad?.();
       });
+
+      return animation;
     };
 
-    initLottie();
+    const animationPromise = initLottie();
 
     return () => {
-      lottieRef.current?.destroy();
+      animationPromise.then(animation => animation?.destroy());
     };
-  }, [src, autoplay, loop]);
+  }, [src, autoplay, loop, DotLottie]);
 
   return (
     <canvas 
