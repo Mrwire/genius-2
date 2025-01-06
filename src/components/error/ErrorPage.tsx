@@ -1,13 +1,22 @@
-import SplineScene from './SplineScene';
-import ErrorContent from './ErrorContent';
-
 export default function ErrorPage() {
   return (
-    <main className="relative min-h-screen w-full bg-black overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <SplineScene />
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold text-white mb-4">404</h1>
+        <p className="text-gray-400 mb-8">Page non trouvée</p>
+        <a 
+          href="/"
+          className="
+            px-6 py-3
+            bg-blue-500 hover:bg-blue-600
+            text-white font-semibold
+            rounded-full
+            transition-colors
+          "
+        >
+          Retour à l'accueil
+        </a>
       </div>
-      <ErrorContent />
-    </main>
+    </div>
   );
 }

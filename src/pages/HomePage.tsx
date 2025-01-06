@@ -1,27 +1,22 @@
-import { Suspense, lazy } from 'react';
-import LoadingScreen from '../components/loading/LoadingScreen';
-import ServicesSection from '../components/services/ServicesSection';
-
-// Lazy load sections
-const Hero = lazy(() => import('../components/hero/Hero'));
-const ValuesSection = lazy(() => import('../components/values/ValuesSection'));
-const AboutSection = lazy(() => import('../components/sections/AboutSection'));
-const GroupSection = lazy(() => import('../components/group/GroupSection'));
-const VisionSection = lazy(() => import('../components/vision/VisionSection'));
-const Contact = lazy(() => import('../components/Contact'));
+import { useEffect } from 'react';
+import Hero from '../components/home/sections/Hero';
+import Presentation from '../components/home/sections/Presentation';
+import Services from '../components/home/sections/Services';
+import Group from '../components/home/sections/Group';
+import Contact from '../components/home/sections/Contact';
 
 export default function HomePage() {
+  useEffect(() => {
+    document.title = 'Genius Group - Accueil';
+  }, []);
+
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <main className="min-h-screen text-white font-montserrat">
-        <Hero />
-        <ValuesSection />
-        <AboutSection />
-        <ServicesSection />
-        <GroupSection />
-        <VisionSection />
-        <Contact />
-      </main>
-    </Suspense>
+    <main className="relative">
+      <Hero />
+      <Presentation />
+      <Services />
+      <Group />
+      <Contact />
+    </main>
   );
 }
