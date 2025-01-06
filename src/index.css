@@ -42,3 +42,14 @@
     0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
   animation: glitch 500ms infinite;
 }
+
+@layer components {
+  .hero-section {
+    @apply relative min-h-screen w-full bg-[#191C1F] overflow-hidden;
+  }
+
+  .hero-section::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-[1];
+  }
+}

@@ -3,7 +3,6 @@ import HeroBackground from './HeroBackground';
 import HeroContent from './HeroContent';
 import ScrollIndicator from './ScrollIndicator';
 import SplineScene from './SplineScene';
-import './styles.css';
 
 export default function Hero() {
   return (
