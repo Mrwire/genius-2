@@ -14,12 +14,14 @@ export default function AnimatedParticles() {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas?.getContext('2d');
+    if (!canvas) return;
 
-    if (!canvas || !ctx) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     // Set canvas size
     const setSize = () => {
+      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
@@ -38,6 +40,8 @@ export default function AnimatedParticles() {
 
     // Animation loop
     function animate() {
+      if (!canvas || !ctx) return;
+
       ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 

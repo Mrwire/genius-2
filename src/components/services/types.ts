@@ -14,6 +14,7 @@ export interface ServiceCardProps {
   service: Service;
   isInView: boolean;
   delay?: number;
+  index?: number;
 }
 
 export interface ServicesGridProps {

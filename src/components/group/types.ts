@@ -7,6 +7,7 @@ export interface Company {
   services?: string[];
   website?: string;
   isMain?: boolean;
+  longDescription?: string;
 }
 
 export interface CompanyCardProps {

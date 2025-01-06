@@ -5,7 +5,8 @@ import CompanyGrid from './CompanyGrid';
 import CompanyModal from './CompanyModal';
 import GroupHeader from './GroupHeader';
 import GroupTagline from './GroupTagline';
-import { ArrowRight, WhatsApp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import WhatsApp from 'lucide-react/dist/esm/icons/whatsapp';
 
 export default function GroupSection() {
   const [selectedCompany, setSelectedCompany] = useState<typeof COMPANIES[number] | null>(null);
