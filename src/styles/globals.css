@@ -1,16 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monument+Extended:wght@400;700&display=swap');
+
+:root {
+  --color-gold: #FFD700;
+  --color-premium-black: #000000;
+}
 
 .font-space-grotesk {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-@keyframes gradient-x {
+.font-monument {
+  font-family: 'Monument Extended', sans-serif;
+}
+
+/* Glitch effect */
+.glitch-text {
+  position: relative;
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% { transform: translate(2px,0) skew(0deg); }
+  4%, 60% { transform: translate(-2px,0) skew(0deg); }
+  62% { transform: translate(0,0) skew(5deg); }
+}
+
+/* Gradient animation */
+@keyframes gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.animate-gradient-x {
-  animation: gradient-x 3s ease infinite;
+.animate-gradient {
   background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Animation des Lottie players */
+.lottie-player.visible {
+  opacity: 0.6;
+}
+
+/* Gradient radial */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Support pour le gradient radial */
+@variants responsive {
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
 } 

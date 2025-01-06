@@ -1,25 +1,25 @@
 import { Suspense, lazy } from 'react';
 import LoadingScreen from '../components/loading/LoadingScreen';
-import ServicesSection from '../components/services/ServicesSection';
 
-// Lazy load sections
-const Hero = lazy(() => import('../components/hero/Hero'));
-const ValuesSection = lazy(() => import('../components/values/ValuesSection'));
-const AboutSection = lazy(() => import('../components/sections/AboutSection'));
-const GroupSection = lazy(() => import('../components/group/GroupSection'));
-const VisionSection = lazy(() => import('../components/vision/VisionSection'));
-const Contact = lazy(() => import('../components/Contact'));
+// Lazy loaded components
+const Hero = lazy(() => import('../components/sections/hero/Hero'));
+const Spirit = lazy(() => import('../components/sections/spirit/Spirit'));
+const About = lazy(() => import('../components/sections/about/About'));
+const Services = lazy(() => import('../components/sections/services/Services'));
+const Group = lazy(() => import('../components/sections/group/Group'));
+const Ambition = lazy(() => import('../components/sections/ambition/Ambition'));
+const Contact = lazy(() => import('../components/sections/contact/Contact'));
 
 export default function HomePage() {
   return (
     <Suspense fallback={<LoadingScreen />}>
-      <main className="min-h-screen text-white font-montserrat">
+      <main className="min-h-screen bg-black font-space-grotesk">
         <Hero />
-        <ValuesSection />
-        <AboutSection />
-        <ServicesSection />
-        <GroupSection />
-        <VisionSection />
+        <Spirit />
+        <About />
+        <Services />
+        <Group />
+        <Ambition />
         <Contact />
       </main>
     </Suspense>
