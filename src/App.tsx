@@ -2,7 +2,6 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoadingScreen from './components/loading/LoadingScreen';
 
-// Lazy load des pages
 const HomePage = lazy(() => import('./pages/HomePage'));
 const MPSPage = lazy(() => import('./pages/MPSPage'));
 const LabrigadPage = lazy(() => import('./pages/LabrigadPage'));
