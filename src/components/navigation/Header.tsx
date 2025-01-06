@@ -1,46 +1,46 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Player } from '@lottiefiles/react-lottie-player';
+import Navigation from './Navigation';
+import Logo from './Logo';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  let lastScroll = 0;
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScroll = window.scrollY;
+      
+      if (currentScroll > lastScroll && currentScroll > 200) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      lastScroll = currentScroll;
+
+      setIsScrolled(currentScroll > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header className={`
       fixed top-0 left-0 right-0 z-50
-      transition-all duration-300
-      ${isScrolled ? 'bg-black/80 backdrop-blur-lg' : 'bg-transparent'}
+      transition-all duration-500 ease-out
+      ${isScrolled ? 'py-2' : 'py-6'}
+      ${isHidden ? '-translate-y-full' : 'translate-y-0'}
     `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="text-white font-bold text-xl">
-            GENIUS GROUP
-          </Link>
-
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/" className="text-white/80 hover:text-white transition-colors">
-              Accueil
-            </Link>
-            <a href="#services" className="text-white/80 hover:text-white transition-colors">
-              Services
-            </a>
-            <a href="#group" className="text-white/80 hover:text-white transition-colors">
-              Le Groupe
-            </a>
-            <a href="#contact" className="text-white/80 hover:text-white transition-colors">
-              Contact
-            </a>
-          </nav>
+        <div className={`
+          relative flex items-center justify-between
+          ${isScrolled ? 'bg-white/5 backdrop-blur-xl rounded-full px-6 py-2 shadow-[0_0_15px_rgba(255,255,255,0.1)]' : ''}
+          transition-all duration-500
+        `}>
+          <Logo />
+          <Navigation />
         </div>
       </div>
     </header>
