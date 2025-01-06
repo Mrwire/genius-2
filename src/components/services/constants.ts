@@ -5,7 +5,7 @@ export const SERVICES: Service[] = [
   {
     id: 'branding',
     title: 'BRANDING',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_xyadoh9h.json',
+    animation: 'https://lottie.host/d12f0546-609f-437f-968f-8803ec4ef481/B8yjHJdjgA.json',
     services: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
   {
     id: 'print',
     title: 'PRINT',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_ydo1amjm.json',
+    animation: 'https://lottie.host/830bc3a7-5a5d-4be6-93b8-682a033c4710/NOPpo4DDS1.json',
     services: [
       'Edition / Graphisme / Publicité',
       'Supports imprimés',
@@ -27,7 +27,7 @@ export const SERVICES: Service[] = [
   {
     id: 'media',
     title: 'MÉDIA',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_dXpqRKBTTM.json',
+    animation: 'https://lottie.host/5c477aa3-e832-4780-b53c-257cb2eb53f0/2RvuaLjEUD.json',
     services: [
       'Vidéo / Reportage / Photo',
       'Portrait corporate',
@@ -38,7 +38,7 @@ export const SERVICES: Service[] = [
   {
     id: 'marketing',
     title: 'MARKETING',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_UeUwVwJGrd.json',
+    animation: 'https://lottie.host/fdf3b0bf-1a91-43aa-9257-fd07fbd28e02/UCWdUPfdK2.json',
     services: [
       'Digital Marketing',
       'Stratégie Communication',
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
   {
     id: 'digital',
     title: 'DIGITAL & WEB',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_dGfPYmGGtc.json',
+    animation: 'https://lottie.host/8f05404e-df43-4fdc-89a0-7f358f2b129f/aQGrkd5oaA.json',
     services: [
       'Application & Mini jeu',
       'Site Vitrine / E-commerce',
@@ -60,7 +60,7 @@ export const SERVICES: Service[] = [
   {
     id: 'impression',
     title: 'IMPRESSION',
-    animation: 'https://assets5.lottiefiles.com/packages/lf20_kZqQxYSWbq.json',
+    animation: 'https://lottie.host/f7ba41de-65d2-4ca3-bbf6-c91d3b0c2e5a/ctlvkk7Jqg.json',
     services: [
       'Numérique',
       'Technique de Fabrication',
