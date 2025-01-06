@@ -1,5 +1,5 @@
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import { Building, Users, Globe, Award } from 'lucide-react';
+import { Building, Users, Globe, Award, Paintbrush, Video, Code, Lightbulb } from 'lucide-react';
 
 const stats = [
   {
@@ -20,6 +20,24 @@ const stats = [
     label: 'Bureaux',
     description: 'Casablanca, Rabat, Tanger'
   }
+];
+
+const expertise = [
+  "Stratégies de communication",
+  "Métiers graphiques 2D et 3D",
+  "Industrie publicitaire",
+  "Événementiel corporate et grand public",
+  "Design d'intérieur et aménagements",
+  "Production audiovisuelle",
+  "Marketing Digital et Développement"
+];
+
+const values = [
+  { text: "SAVOIR-FAIRE", icon: Paintbrush },
+  { text: "TECHNOLOGIE", icon: Code },
+  { text: "INNOVATION", icon: Lightbulb },
+  { text: "CRÉATIVITÉ", icon: Award },
+  { text: "PASSION", icon: Users }
 ];
 
 export default function AboutSection() {
@@ -47,9 +65,10 @@ export default function AboutSection() {
                 <div className="absolute -bottom-3 left-0 w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Depuis 2008, nous façonnons l'avenir de la communication au Maroc. 
-                Notre passion pour l'innovation et notre engagement envers l'excellence 
-                nous ont permis de devenir un acteur majeur dans le secteur.
+                Genius Ad District est l'agence globale, filiale d'un groupe de sociétés 
+                spécialisées dans les métiers de la communication. Dans une quête continuelle 
+                de la PERFECTION, Genius se dote des meilleurs outils technologiques, et 
+                devient au fil du temps, l'agence dite PREMIUM, offrant le WOW EFFECT garanti.
               </p>
             </div>
 
@@ -63,6 +82,37 @@ export default function AboutSection() {
                 créativité, technologie et stratégie pour donner vie à des projets 
                 qui dépassent les attentes.
               </p>
+            </div>
+
+            {/* Nouvelle section d'expertise */}
+            <div className="pt-8">
+              <div className="text-3xl font-bold text-blue-600 mb-6">
+                40+ ans d'expertise
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {expertise.map((item, index) => (
+                  <div 
+                    key={index}
+                    className="flex items-center space-x-2 text-gray-700"
+                  >
+                    <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4 mt-8">
+                {values.map((value, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full"
+                  >
+                    <value.icon className="w-4 h-4 text-blue-500" />
+                    <span className="font-semibold text-gray-800">{value.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
