@@ -5,7 +5,7 @@ export const SERVICES: Service[] = [
   {
     id: 'branding',
     title: 'BRANDING',
-    animation: '/animations/paint-brush-creative.json',
+    animation: 'https://lottie.host/2a32e8ed-907d-4c4b-9101-ce76c5cf789c/xr4rrLvxGi.json',
     services: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -16,7 +16,7 @@ export const SERVICES: Service[] = [
   {
     id: 'print',
     title: 'PRINT',
-    animation: '/animations/printing-press.json',
+    animation: 'https://lottie.host/ad7fd0d7-751d-4a25-b847-4e3a2d60acb6/aPWyXrBTZl.json',
     services: [
       'Edition / Graphisme / Publicité',
       'Supports imprimés',
@@ -27,9 +27,7 @@ export const SERVICES: Service[] = [
   {
     id: 'media',
     title: 'MÉDIA',
-    description: 'Production audiovisuelle de qualité',
-    icon: Camera,
-    animation: 'https://lottie.host/embed/media-production/media.json',
+    animation: 'https://lottie.host/0934e41e-7f14-4469-8e1c-51e5834dff47/dXpqRKBTTM.json',
     services: [
       'Vidéo / Reportage / Photo',
       'Portrait corporate',
@@ -40,9 +38,7 @@ export const SERVICES: Service[] = [
   {
     id: 'marketing',
     title: 'MARKETING',
-    description: 'Stratégies marketing innovantes',
-    icon: BarChart3,
-    animation: 'https://lottie.host/embed/marketing-strategy/strategy.json',
+    animation: 'https://lottie.host/4e997e95-8d3f-4b5e-8dd8-f3c6392beb36/UeUwVwJGrd.json',
     services: [
       'Digital Marketing',
       'Stratégie Communication',
@@ -53,9 +49,7 @@ export const SERVICES: Service[] = [
   {
     id: 'digital',
     title: 'DIGITAL & WEB',
-    description: 'Solutions numériques sur mesure',
-    icon: Globe,
-    animation: 'https://lottie.host/embed/web-development/development.json',
+    animation: 'https://lottie.host/cb6b907e-5276-4185-813c-6c6cb22ac58d/dGfPYmGGtc.json',
     services: [
       'Application & Mini jeu',
       'Site Vitrine / E-commerce',
@@ -66,9 +60,7 @@ export const SERVICES: Service[] = [
   {
     id: 'impression',
     title: 'IMPRESSION',
-    description: 'Services d\'impression avancés',
-    icon: Box,
-    animation: 'https://lottie.host/embed/3d-printer/printer.json',
+    animation: 'https://lottie.host/3d0d4d6c-4b12-4586-9c7b-c0f8914cd36d/kZqQxYSWbq.json',
     services: [
       'Numérique',
       'Technique de Fabrication',
@@ -79,9 +71,7 @@ export const SERVICES: Service[] = [
   {
     id: 'design',
     title: 'DESIGN D\'ESPACE',
-    description: 'Conception d\'espaces innovants',
-    icon: LayoutDashboard,
-    animation: 'https://lottie.host/embed/3d-space-design/space.json',
+    animation: 'https://lottie.host/c1c1f726-7e5f-45cd-9b0c-d7cce0d1a8c3/hHJqSJCTAp.json',
     services: [
       'Simulation 2D - 3D',
       'Stand / Shops et divers',
@@ -92,9 +82,7 @@ export const SERVICES: Service[] = [
   {
     id: 'gaming',
     title: 'GAMING & EVENT',
-    description: 'Solutions gaming et événementiel',
-    icon: Trophy,
-    animation: 'https://lottie.host/embed/gaming-trophy/trophy.json',
+    animation: 'https://lottie.host/e8c7d5c9-0d4b-4c46-8612-f067e8e7c6a4/bIrDfOUWWt.json',
     services: [
       'Studio de streaming',
       'Élaboration de concept',

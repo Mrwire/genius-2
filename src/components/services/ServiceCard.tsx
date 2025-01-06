@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import type { ServiceCardProps } from './types';
 
 export default function ServiceCard({ service, isInView, delay = 0 }: ServiceCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <div
@@ -21,13 +22,21 @@ export default function ServiceCard({ service, isInView, delay = 0 }: ServiceCar
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Animation Container */}
-      <div className="h-32 flex items-center justify-center p-6">
+      <div className="h-32 flex items-center justify-center p-6 relative">
+        {!isLoaded && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          </div>
+        )}
         <Player
           src={service.animation}
-          className="w-24 h-24"
+          className={`w-24 h-24 transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           autoplay={isHovered}
           loop={true}
           keepLastFrame={true}
+          onEvent={event => {
+            if (event === 'load') setIsLoaded(true);
+          }}
         />
       </div>
 

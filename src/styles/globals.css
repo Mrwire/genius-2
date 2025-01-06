@@ -1,90 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Monument+Extended:wght@400;700&display=swap');
-
-:root {
-  --color-gold: #FFD700;
-  --color-premium-black: #000000;
-}
 
 .font-space-grotesk {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.font-monument {
-  font-family: 'Monument Extended', sans-serif;
-}
-
-/* Glitch effect */
-.glitch-text {
-  position: relative;
-  animation: glitch 500ms infinite;
-  animation-timing-function: steps(2, end);
-}
-
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-/* Gradient animation */
-@keyframes gradient {
+@keyframes gradient-x {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.animate-gradient {
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
   background-size: 200% 200%;
-  animation: gradient 3s ease infinite;
-}
-
-/* Animation des Lottie players */
-.lottie-player.visible {
-  opacity: 0.6;
-}
-
-/* Gradient radial */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
-}
-
-.pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
-}
-
-/* Support pour le gradient radial */
-@variants responsive {
-  .bg-gradient-radial {
-    background-image: radial-gradient(var(--tw-gradient-stops));
-  }
-}
-
-/* Gold color variable */
-:root {
-  --color-gold: #FFD700;
-}
-
-/* Pulse animation */
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.animate-pulse {
-  animation: pulse 1s ease-in-out infinite;
 } 
