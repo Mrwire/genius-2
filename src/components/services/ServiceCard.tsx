@@ -1,52 +1,61 @@
-import { type Service } from './types';
+import { useState } from 'react';
+import { Player } from '@lottiefiles/react-lottie-player';
+import type { ServiceCardProps } from './types';
 
-interface ServiceCardProps {
-  service: Service;
-  isInView: boolean;
-  delay: number;
-}
-
-export default function ServiceCard({ service, isInView, delay }: ServiceCardProps) {
-  const { icon: Icon, title, description, features } = service;
+export default function ServiceCard({ service, isInView, delay = 0 }: ServiceCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className={`
-      group relative p-8
-      bg-white/5 backdrop-blur-sm rounded-xl
-      border border-white/10
-      transition-all duration-700
-      hover:bg-white/10
-      ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
-    `}
-    style={{ transitionDelay: `${delay}ms` }}>
-      <Icon className="w-12 h-12 text-blue-400 mb-6" />
-      
-      <h3 className="text-xl font-bold text-white mb-3">
-        {title}
-      </h3>
-      
-      <p className="text-gray-400 mb-6">
-        {description}
-      </p>
-      
-      <ul className="space-y-2">
-        {features.map((feature, index) => (
-          <li 
-            key={index}
-            className="flex items-center text-sm text-gray-300"
-          >
-            <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2" />
-            {feature}
-          </li>
-        ))}
-      </ul>
+    <div
+      className={`
+        group relative
+        w-full h-[380px]
+        bg-white rounded-2xl
+        shadow-sm hover:shadow-lg
+        transform hover:scale-[1.02]
+        transition-all duration-300
+        ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+      `}
+      style={{ transitionDelay: `${delay}ms` }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Animation Container */}
+      <div className="h-32 flex items-center justify-center p-6">
+        <Player
+          src={service.animation}
+          className="w-24 h-24"
+          autoplay={isHovered}
+          loop={true}
+          keepLastFrame={true}
+        />
+      </div>
 
-      <div className="
-        absolute bottom-0 left-0 w-full h-1
-        bg-gradient-to-r from-blue-500 to-purple-500
-        transform scale-x-0 group-hover:scale-x-100
-        transition-transform duration-300
-      " />
+      {/* Content */}
+      <div className="px-6 pb-6">
+        <h3 className="
+          text-xl font-bold text-gray-900 mb-4
+          font-space-grotesk
+        ">
+          {service.title}
+        </h3>
+
+        <ul className="space-y-2">
+          {service.services.map((item, index) => (
+            <li 
+              key={index}
+              className="flex items-center text-gray-600"
+            >
+              <div className="
+                w-1.5 h-1.5 rounded-full
+                bg-gradient-to-r from-blue-500 to-purple-500
+                mr-3
+              " />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

@@ -5,9 +5,7 @@ export const SERVICES: Service[] = [
   {
     id: 'branding',
     title: 'BRANDING',
-    description: 'Créez une identité de marque mémorable',
-    icon: Paintbrush,
-    animation: 'https://lottie.host/embed/paint-brush-creative/animated-brush.json',
+    animation: '/animations/paint-brush-creative.json',
     services: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -18,9 +16,7 @@ export const SERVICES: Service[] = [
   {
     id: 'print',
     title: 'PRINT',
-    description: 'Solutions d\'impression professionnelles',
-    icon: Printer,
-    animation: 'https://lottie.host/embed/printing-press/press.json',
+    animation: '/animations/printing-press.json',
     services: [
       'Edition / Graphisme / Publicité',
       'Supports imprimés',

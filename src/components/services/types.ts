@@ -1,18 +1,16 @@
-import { LucideIcon } from 'lucide-react';
+import { LottiePlayer } from '@lottiefiles/react-lottie-player';
 
 export interface Service {
   id: string;
   title: string;
-  description: string;
-  services: string[];
   animation: string;
-  icon: LucideIcon;
+  services: string[];
 }
 
 export interface ServiceCardProps {
   service: Service;
-  index: number;
   isInView: boolean;
+  delay?: number;
 }
 
 export interface ServicesGridProps {
