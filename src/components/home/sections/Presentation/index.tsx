@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '../../../../hooks/useIntersectionObserver';
+import Lottie from 'lottie-react';
+
+// Import des animations Lottie
+import brandingAnimation from './animations/branding.json';
+import printAnimation from './animations/print.json';
+import mediaAnimation from './animations/media.json';
+import marketingAnimation from './animations/marketing.json';
+import digitalAnimation from './animations/digital.json';
+import impressionAnimation from './animations/impression.json';
+import designAnimation from './animations/design.json';
+import gamingAnimation from './animations/gaming.json';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -7,6 +18,88 @@ const fadeIn = {
 };
 
 const VALUES = ['SAVOIR-FAIRE', 'TECHNOLOGIE', 'INNOVATION', 'CRÉATIVITÉ', 'PASSION'];
+
+const SERVICES = [
+  {
+    title: 'BRANDING',
+    animation: brandingAnimation,
+    items: [
+      'Identité visuelle et graphique',
+      'Logotype & Charte Graphique',
+      'Naming & recherche de nom',
+      'Personal branding'
+    ]
+  },
+  {
+    title: 'PRINT',
+    animation: printAnimation,
+    items: [
+      'Edition / Graphisme / Publicité',
+      'Supports imprimés',
+      'Plaquette commerciale',
+      'Papeterie marketing'
+    ]
+  },
+  {
+    title: 'MÉDIA',
+    animation: mediaAnimation,
+    items: [
+      'Vidéo / Reportage / Photo',
+      'Portrait corporate',
+      'Motion Design',
+      'Photo publicitaire'
+    ]
+  },
+  {
+    title: 'MARKETING',
+    animation: marketingAnimation,
+    items: [
+      'Digital Marketing',
+      'Stratégie Communication',
+      'Social Media Strategy'
+    ]
+  },
+  {
+    title: 'DIGITAL & WEB',
+    animation: digitalAnimation,
+    items: [
+      'Application & Mini jeu',
+      'Site Vitrine / E-commerce',
+      'Newsletter Mailing',
+      'Social Media'
+    ]
+  },
+  {
+    title: 'IMPRESSION',
+    animation: impressionAnimation,
+    items: [
+      'Numérique',
+      'Technique de Fabrication',
+      'Personnalisation',
+      'Objets publicitaires'
+    ]
+  },
+  {
+    title: 'DESIGN D\'ESPACE',
+    animation: designAnimation,
+    items: [
+      'Simulation 2D - 3D',
+      'Stand / Shops et divers',
+      'Aménagement Intérieur',
+      'Merchandising & PLV'
+    ]
+  },
+  {
+    title: 'GAMING & EVENT',
+    animation: gamingAnimation,
+    items: [
+      'Studio de streaming',
+      'Élaboration de concept',
+      'Tournois en ligne',
+      'Organisation Event'
+    ]
+  }
+];
 
 export default function Presentation() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
@@ -114,6 +207,56 @@ export default function Presentation() {
               <span className="text-white font-semibold">{value}</span>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Nos Métiers */}
+        <motion.div
+          initial="hidden"
+          animate={isIntersecting ? "visible" : "hidden"}
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-32"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+            AGENCE MULTIDISCIPLINAIRE
+          </h2>
+          <p className="text-lg text-gray-600 text-center mb-16">
+            Découvrez notre expertise dans différents domaines
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {SERVICES.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial="hidden"
+                animate={isIntersecting ? "visible" : "hidden"}
+                variants={fadeIn}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="h-48 w-full bg-gray-50 flex items-center justify-center">
+                  <Lottie
+                    animationData={service.animation}
+                    loop={true}
+                    className="w-32 h-32"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {service.title}
+                  </h3>
+                  <ul className="space-y-2">
+                    {service.items.map((item, i) => (
+                      <li key={i} className="text-gray-600 flex items-center">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
