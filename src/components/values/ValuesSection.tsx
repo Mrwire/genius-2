@@ -4,11 +4,10 @@ import LetterBox from './LetterBox';
 
 export default function ValuesSection() {
   const { ref, isIntersecting } = useIntersectionObserver({ threshold: 0.1 });
-
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-white pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-white pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={ref}>
