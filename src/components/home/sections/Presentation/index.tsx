@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useIntersectionObserver } from '../../../../hooks/useIntersectionObserver';
-import Lottie from 'lottie-react';
+import LottieAnimation from '../../../common/LottieAnimation';
 
 // Import des animations Lottie
 import { LOTTIE_ANIMATIONS } from './animations';
@@ -15,7 +15,7 @@ const VALUES = ['SAVOIR-FAIRE', 'TECHNOLOGIE', 'INNOVATION', 'CRÉATIVITÉ', 'PA
 const SERVICES = [
   {
     title: 'BRANDING',
-    animation: LOTTIE_ANIMATIONS.branding,
+    animationUrl: 'https://lottie.host/d12f0546-609f-437f-968f-8803ec4ef481/B8yjHJdjgA.json',
     items: [
       'Identité visuelle et graphique',
       'Logotype & Charte Graphique',
@@ -227,10 +227,9 @@ export default function Presentation() {
                 transition={{ duration: 0.6, delay: 0.1 * index }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="h-48 w-full bg-gray-50 flex items-center justify-center">
-                  <Lottie
-                    animationData={service.animation}
-                    loop={true}
+                <div className="h-48 w-full bg-gray-50 flex items-center justify-center p-4">
+                  <LottieAnimation
+                    url={service.animationUrl}
                     className="w-32 h-32"
                   />
                 </div>
